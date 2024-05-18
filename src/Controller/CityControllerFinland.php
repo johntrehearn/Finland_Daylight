@@ -132,7 +132,7 @@ class CityControllerFinland extends AbstractController
     {
         $daylightChanges = [];
         $startDate = new \DateTime("first day of January this year");
-        $endDate = new \DateTime("last day December this year");
+        $endDate = new \DateTime("last day January this year");
 
         for ($date = $startDate; $date <= $endDate; $date->modify("+1 day")) {
             $daylightData = $this->fetchDaylightData(
