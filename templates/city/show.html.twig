@@ -7,7 +7,11 @@
 {% block body %}
 <h1 class="text-4xl font-bold mb-4 text-center text-blue-500">Daylight Data for {{ cityName|capitalize }} and {{ cityName2|capitalize }}</h1>
 
-<div id="react-root" data-city-name="{{ cityName }}" data-city-name2="{{ cityName2 }}"></div> 
+<div class="bg-blue-200">
+
+    <div id="react-root" data-city-name="{{ cityName }}" data-city-name2="{{ cityName2 }}"></div> 
+
+</div>
 
 {% endblock %}
 

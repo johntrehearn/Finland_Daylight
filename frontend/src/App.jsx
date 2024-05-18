@@ -43,7 +43,7 @@ const App = () => {
 
   // Render the chart only when data is available for both cities
   return (
-    <div class="border-4 border-indigo-600 ...">
+    <div>
       {daylightData && daylightData2 && cityName && cityName2 ? (
         <DaylightChart
           daylightChanges={daylightData}
