@@ -29,7 +29,7 @@ class CityControllerFinland extends AbstractController
             $cityName = $form->get("city")->getData();
             $cityName2 = $form->get("city2")->getData();
 
-            // Fetch latitude and longitude for the entered city name - WORKING
+            // Fetch latitude and longitude
             $coordinates = $this->getCoordinatesForCity($cityName);
             $coordinates2 = $this->getCoordinatesForCity($cityName2);
 
@@ -47,7 +47,7 @@ class CityControllerFinland extends AbstractController
                 );
             }
 
-            // Render the results with the daylight data
+            // Render the results 
             return $this->render("city/show.html.twig", [
                 "form" => $form->createView(),
                 "daylightChanges" => $daylightData["daylightChanges"] ?? [],
@@ -97,10 +97,9 @@ class CityControllerFinland extends AbstractController
         }
     }
 
-    // WORKING
     private function getCoordinatesForCity($cityName): ?array
     {
-        $apiKey = $this->getParameter("geocode_api_key"); // Use the 'geocode_api_key' parameter
+        $apiKey = $this->getParameter("geocode_api_key"); 
 
         $geocodeResponse = $this->client->request(
             "GET",
@@ -108,7 +107,7 @@ class CityControllerFinland extends AbstractController
             [
                 "query" => [
                     "q" => $cityName,
-                    "api_key" => $apiKey, // Use the API key from the .env file
+                    "api_key" => $apiKey, 
                 ],
             ]
         );
@@ -141,7 +140,6 @@ class CityControllerFinland extends AbstractController
             );
 
             if (!empty($daylightData["results"])) {
-                // Convert sunrise and sunset to local time zone
                 $sunriseLocal = (new \DateTime(
                     $daylightData["results"]["sunrise"],
                     new \DateTimeZone("UTC")
@@ -163,7 +161,6 @@ class CityControllerFinland extends AbstractController
                 );
             }
         }
-        // Return the daylight changes along with the local sunrise and sunset times
         return [
             "daylightChanges" => $daylightChanges,
         ];
