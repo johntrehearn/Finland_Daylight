@@ -22,8 +22,8 @@ class CityType extends AbstractType
                 "required" => true,
             ])
             ->add("submit", SubmitType::class, [
-                "label" => "Get Daylight Data",
-                "attr" => ["class" => "btn btn-primary"],
+                "label" => "Show Daylight Comparison",
+                "attr" => ["class" => "font-serif text-2xl font-bold mb-4 ml-9 ps-11 px-8 text-center text-blue-500 btn btn-primary py-2 px-4 border border-blue-700 rounded"],
             ]);
     }
 }
