@@ -5,21 +5,26 @@
 {% block title %}Enter a City{% endblock %}
 
 {% block body %}
-<div class="container mx-auto px-4">
-    <h1 class="text-4xl font-bold mb-4 text-center text-blue-500">Enter a Finnish City for Daylight Data</h1>
+<div class="bg-gray-200 container mx-auto px-4 ">
+    <h1 class="font-serif text-4xl font-bold pt-6 mb-4 text-center text-blue-800"> Daylight Data</h1>
 
-    {{ form_start(form, {'attr': {'class': 'bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'}}) }}
+    <h4 class="font-serif text-2xl font-bold pt-6 mb-4 text-blue-500">Please center two cities to compare their daylight:</h4>
+
+    <div class="flex justify-center bg-gray-200 mb-10">
+
+    {{ form_start(form, {'attr': {'class': 'shadow-md rounded mt-11 w-1/4 px-8 pt-6 mb-8 pb-8 grid'}}) }}
 
     {{ form_row(form.city, {
-    'label': 'City Name',
-    'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', 'placeholder': 'Type the name of a Finnish city'}
+    'label': 'City Name:',
+    'attr': {'class': 'font-serif shadow appearance-none border rounded w-5/6 ml-11 py-2 px-3 mt-3 text-gray-700 leading-tight mb-8 focus:outline-none focus:shadow-outline', 'placeholder': 'Type the name of a Finnish city'}
     }) }}
 
     {{ form_row(form.city2, {
-    'label': 'Second City Name',
-    'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline', 'placeholder': 'Type the name of a Finnish city'}
+    'label': 'City Name:',
+    'attr': {'class': 'font-serif shadow appearance-none border rounded w-5/6 mx-11 py-2 px-3 mt-3 text-gray-700 leading-tight mb-8 focus:outline-none focus:shadow-outline', 'placeholder': 'Type the name of a Finnish city'}
     }) }}
 
     {{ form_end(form) }}
+    </div>
 </div>
 {% endblock %}
